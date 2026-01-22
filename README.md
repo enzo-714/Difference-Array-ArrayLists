@@ -1,0 +1,53 @@
+import java.util.ArrayList;
+
+public class Main
+{
+  public static void main(String[] args)
+  {
+    //-------------Array Example------------
+    // Array has a fixed size that has to be defined at the beginning.
+    // Arrays store primitive data types or object references.
+    String[] foodArray = new String[5];
+    foodArray[0] = "Hamburger";
+    foodArray[1] = "Tacos";
+    foodArray[2] = "Cereal";
+    foodArray[3] = "Burritos";
+    foodArray[4] = "Hot Dogs";
+
+    System.out.println("Array elements (fixed size): ");
+    for (int i = 0; i < foodArray.length; i++)
+    {
+        // Access elements using the index to be fast and memory efficient
+        System.out.println(foodArray[i]);
+    }
+    // If anything past foodArray[5] will cause an error because arrays can't resize.
+
+
+    //---------ArrayList Example---------
+    // ArrayList is part of the Java Collections Framework.
+    // ArrayLists store Objects only (no primitive types).
+    // Wrapper classes are used when needed (Integer for int).
+
+    ArrayList<String> foods = new ArrayList<>();
+
+    foods.add("Hamburger");
+    foods.add("Tacos");
+    foods.add("Cereal");
+    foods.add("Burritos");
+    foods.add("Hot Dogs");
+
+    //ArrayLists resize dynamically and allow easy modification
+    foods.remove(2);  //Remove the food "Cereal"
+    foods.add("Soup");      //Adds "Soup" without size limits
+
+    System.out.println("\nArrayList elements (dynamic size):");
+    for (String food : foods)
+    {
+        System.out.println(food);
+    }
+
+    // Difference:
+    // Arrays are more efficient but less flexible.
+    // ArrayLists are more flexible but have slightly more overhead. 
+  }
+}
